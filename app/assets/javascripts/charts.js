@@ -23,8 +23,13 @@ $(document).ready(function() {
 
 		        // Set chart options
 		        var options = {'title':"Schools' Average Cost for Bandwidth",
-		                       'width':800,
-		                       'height':500};
+		        				'titleTextStyle': { fontSize: 36 },
+		                       'width':1000,
+		                       'height':500,
+		                   		'legend': { position: "none" },
+		                   		'hAxis': { title: "BEN (Billed Entity Number)" },
+		                   		'vAxis': { title: "Average Cost Per Megabit (Dollars)", minValue: 0 }
+		                   	};
 
 		        // Instantiate and draw our chart, passing in some options.
 		        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
