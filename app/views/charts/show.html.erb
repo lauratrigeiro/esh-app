@@ -1,4 +1,7 @@
 <h1>Bar Graph goes here!</h1>
-<% @schools.each do |school| %>
-	<p><%= "#{school.name}, #{school.ben}: #{@service.average_cost_per_megabit(school)}" %></p>
+
+
+<%= content_tag(:div, :'data-chart' => charts_chart_data_path, :id => 'chart_div') do %>
+	<%= image_tag('spinner.gif', :size => '24x24', :class => 'spinner') %>
 <% end %>
+
