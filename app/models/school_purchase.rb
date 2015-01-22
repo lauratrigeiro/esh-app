@@ -5,4 +5,8 @@ class SchoolPurchase < ActiveRecord::Base
 	validates :measure, presence: true, allow_blank: false,
 			  inclusion: { in: ["k", "m", "g", "t"] } 
 	validates :cost, presence: true
+
+	def school
+		School.where(ben: self.ben).first
+	end
 end

@@ -3,7 +3,8 @@ require 'test_helper'
 class SchoolPurchaseTest < ActiveSupport::TestCase
   
   def setup
-  	@purchase = SchoolPurchase.new(ben: "102", bandwidth: 100, measure: "g", cost: 25)
+  	@purchase = SchoolPurchase.new(ben: "123", bandwidth: 100, measure: "g", cost: 25) 
+  	@school = School.new(name: "Test School", ben: "123")
   end
 
   test "should be valid" do
@@ -38,5 +39,11 @@ class SchoolPurchaseTest < ActiveSupport::TestCase
   test "cost should be present" do
   	@purchase.cost = nil
   	assert_not @purchase.valid?
+  end
+
+  test "purchase is associated with school" do
+	@school.save!
+  	@purchase.save!
+  	assert_equal @school, @purchase.school
   end
 end
