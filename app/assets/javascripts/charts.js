@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	// great reference: http://zargony.com/2012/02/29/google-charts-on-your-site-the-unobtrusive-way
+
 	$.getScript('https://www.google.com/jsapi', function (data, textStatus) {
       google.load('visualization', '1.0', { 'packages': ['corechart'], 'callback': function () {
         // Google visualization library loaded
