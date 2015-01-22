@@ -34,7 +34,10 @@ gem 'minitest-reporters', '1.0.5', group: :test
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+group :production do
+  gem 'rails_12factor', '0.0.2'
+  gem 'unicorn',		'4.8.3'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
