@@ -1,1 +1,4 @@
 <h1>Bar Graph goes here!</h1>
+<% @schools.each do |school| %>
+	<p><%= "#{school.name}, #{school.ben}: #{@service.average_cost_per_megabit(school)}" %></p>
+<% end %>
